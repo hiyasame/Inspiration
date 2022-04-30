@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#C8DBB8"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".view.activity.ColorActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:menu="@menu/search"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize" />
+
+    <!--丐版小点-->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tl_dot"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextColor="@color/white"
+        app:tabIndicatorHeight="0dp"
+        app:tabRippleColor="@android:color/transparent"
+        android:background="@android:color/transparent"
+        app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:tabPadding="-20dp"
+        >
+
+        <com.google.android.material.tabs.TabItem
+            tools:text="·"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.tabs.TabItem
+            tools:text="·"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.tabs.TabItem
+            tools:text="·"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.tabs.TabItem
+            tools:text="·"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.google.android.material.tabs.TabItem
+            tools:text="·"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp2_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

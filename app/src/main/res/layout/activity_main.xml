@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#728D65"
+    tools:context=".view.activity.MainActivity">
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+        <FrameLayout
+            android:layout_gravity="center"
+            android:layout_width="80dp"
+            android:layout_height="110dp">
+            <ImageView
+                android:src="@drawable/ic_icon_home"
+                android:id="@+id/iv_home"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:textColor="@color/white"
+                android:layout_gravity="bottom|center"
+                android:textSize="16sp"
+                android:text="@string/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:layout_width="80dp"
+            android:layout_height="110dp">
+            <ImageView
+                android:src="@drawable/ic_icon_colorpalette"
+                android:id="@+id/iv_color"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:textColor="@color/white"
+                android:layout_gravity="bottom|center"
+                android:textSize="16sp"
+                android:text="@string/color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:layout_width="80dp"
+            android:layout_height="110dp">
+            <ImageView
+                android:src="@drawable/ic_icon_lamp"
+                android:id="@+id/iv_inspiration"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:textColor="@color/white"
+                android:layout_gravity="bottom|center"
+                android:textSize="16sp"
+                android:text="@string/inspiration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:layout_width="80dp"
+            android:layout_height="110dp">
+            <ImageView
+                android:src="@drawable/ic_icon_heart_96"
+                android:id="@+id/iv_collection"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:textColor="@color/white"
+                android:layout_gravity="bottom|center"
+                android:textSize="16sp"
+                android:text="@string/collection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:layout_width="80dp"
+            android:layout_height="110dp">
+
+            <ImageView
+                android:src="@drawable/ic_icon_game"
+                android:id="@+id/iv_game"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:textColor="@color/white"
+                android:layout_gravity="bottom|center"
+                android:textSize="16sp"
+                android:text="@string/game"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+    </LinearLayout>
+
+</FrameLayout>
