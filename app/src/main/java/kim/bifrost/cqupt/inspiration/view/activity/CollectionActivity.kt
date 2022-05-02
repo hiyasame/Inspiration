@@ -11,6 +11,7 @@ import kim.bifrost.cqupt.inspiration.databinding.ActivityCollectionBinding
 import kim.bifrost.cqupt.inspiration.view.adapter.CollectionPagingAdapter
 import kim.bifrost.cqupt.inspiration.view.viewmodel.CollectionViewModel
 import kim.bifrost.rain.common.base.ui.mvvm.BaseVmBindActivity
+import kim.bifrost.rain.common.utils.extensions.setProperty
 import kim.bifrost.rain.common.utils.extensions.toast
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -51,6 +52,7 @@ class CollectionActivity : BaseVmBindActivity<CollectionViewModel, ActivityColle
                 }
             }
         }
+        binding.srl.setProperty("mTouchSlop", 220)
         val callback = object : ItemTouchHelper.Callback() {
             override fun getMovementFlags(
                 recyclerView: RecyclerView,
