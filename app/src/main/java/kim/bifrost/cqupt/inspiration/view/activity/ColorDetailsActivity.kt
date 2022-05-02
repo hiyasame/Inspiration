@@ -5,21 +5,17 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.card.MaterialCardView
 import kim.bifrost.cqupt.inspiration.R
 import kim.bifrost.cqupt.inspiration.databinding.ActivityColorDetailsBinding
 import kim.bifrost.cqupt.inspiration.model.data.color.ColorDetail
-import kim.bifrost.cqupt.inspiration.view.fragment.ColorIntroduceDialogFragment
+import kim.bifrost.cqupt.inspiration.view.fragment.IntroduceDialogFragment
 import kim.bifrost.cqupt.inspiration.view.viewmodel.ColorDetailsViewModel
 import kim.bifrost.cqupt.inspiration.view.widgets.ColorPaletteView
 import kim.bifrost.rain.common.base.ui.mvvm.BaseVmBindActivity
 import kim.bifrost.rain.common.utils.extensions.getProperty
-import kim.bifrost.rain.common.utils.extensions.invokeMethod
 import kim.bifrost.rain.common.utils.extensions.toast
 import kotlinx.coroutines.launch
 
@@ -38,7 +34,7 @@ class ColorDetailsActivity : BaseVmBindActivity<ColorDetailsViewModel, ActivityC
                     val data = viewModel.data.data ?: return@setOnMenuItemClickListener false.also {
                         "网络数据异常: ${viewModel.data.message}".toast()
                     }
-                    ColorIntroduceDialogFragment.newInstance(data.colors.color_1.name, data.intro)
+                    IntroduceDialogFragment.newInstance(data.colors.color_1.name, data.intro)
                         .show(supportFragmentManager, "introduce")
                 }
                 true
@@ -58,10 +54,13 @@ class ColorDetailsActivity : BaseVmBindActivity<ColorDetailsViewModel, ActivityC
                 tvCmyk.text = "CMYK ${data.colors.color_1.c},${data.colors.color_1.m},${data.colors.color_1.y},${data.colors.color_1.k}"
                 mcvItem.setBackgroundColor(Color.parseColor("#${data.colors.color_1.hex}"))
                 repeat(6) {
-                    this.getProperty<ColorPaletteView>("cpv${it + 1}")!!
-                            // 必须按照argb的格式来
-                        .setColors(data.shades.shade_list[it].shade.map { c -> ("FF" + c.color.hex).toLong(16).toInt() }.toIntArray())
-                    // todo 进入色谱渐变页面
+                    this.getProperty<ColorPaletteView>("cpv${it + 1}")!!.apply {
+                        // 必须按照argb的格式来
+                        setColors(data.shades.shade_list[it].shade.map { c -> Color.parseColor("#${c.color.hex}") }.toIntArray())
+                        setOnClickListener { _ ->
+                            GradientActivity.start(this@ColorDetailsActivity, data.shades.shade_list[it].shade)
+                        }
+                    }
                 }
                 repeat(6) {
                     val color = data.colors.getProperty<ColorDetail.Colors.Color>("color_${it + 2}")!!
@@ -73,7 +72,7 @@ class ColorDetailsActivity : BaseVmBindActivity<ColorDetailsViewModel, ActivityC
                         }
                     }
                     this.getProperty<TextView>("tvColor${it + 1}")
-                        ?.text = "0x${color.hex}"
+                        ?.text = "#${color.hex}"
                 }
             }
         }

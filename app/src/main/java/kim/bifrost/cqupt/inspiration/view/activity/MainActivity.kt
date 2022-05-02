@@ -12,6 +12,12 @@ class MainActivity : BaseBindActivity<ActivityMainBinding>() {
             ivColor.setOnClickListener {
                 startActivity(ColorActivity::class.java)
             }
+            ivInspiration.setOnClickListener {
+                startActivity(InspirationActivity::class.java)
+            }
+            ivCollection.setOnClickListener {
+                startActivity(CollectionActivity::class.java)
+            }
         }
     }
 }

@@ -14,7 +14,7 @@ import kim.bifrost.cqupt.inspiration.databinding.FragmentColorIntroduceBinding
  * @author 寒雨
  * @since 2022/4/30 21:00
  **/
-class ColorIntroduceDialogFragment : BottomSheetDialogFragment() {
+class IntroduceDialogFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentColorIntroduceBinding
     private lateinit var title: String
@@ -45,13 +45,13 @@ class ColorIntroduceDialogFragment : BottomSheetDialogFragment() {
     }
 
     companion object {
-        fun newInstance(title: String, content: String): ColorIntroduceDialogFragment {
+        fun newInstance(title: String, content: String): IntroduceDialogFragment {
             val args = Bundle()
                 .apply {
                     putString("title", title)
                     putString("content", content)
                 }
-            val fragment = ColorIntroduceDialogFragment()
+            val fragment = IntroduceDialogFragment()
             fragment.arguments = args
             return fragment
         }

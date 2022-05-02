@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bg_gradient"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.GradientActivity">
+
+    <kim.bifrost.cqupt.inspiration.view.widgets.LinearGradientView
+        android:id="@+id/lgv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <kim.bifrost.cqupt.inspiration.view.widgets.StatusBar
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:background="@android:color/transparent"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_like"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginVertical="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_icon_heart_48"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/iv_transmit"
+        android:layout_gravity="bottom|end"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginVertical="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_icon_share_48"
+        tools:ignore="ContentDescription" />
+
+</FrameLayout>

@@ -1,5 +1,8 @@
 package kim.bifrost.rain.common.utils.extensions
 
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.google.gson.reflect.TypeToken
 import java.security.MessageDigest
 
 /**
@@ -29,3 +32,13 @@ fun String.md5(): String {
 
 val Throwable.msg: String
     get() = "${javaClass.simpleName} : ${this.message}"
+
+val gson: Gson = GsonBuilder().create()
+
+/**
+ * 强制转换结构类似的两种类型
+ *
+ * @param T 类型
+ * @return
+ */
+inline fun <reified T> Any.structuralCast(): T = gson.fromJson(gson.toJson(this), T::class.java)

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="20dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/siv"
+            app:shapeAppearance="@style/CutStyle"
+            android:layout_width="176dp"
+            android:layout_height="176dp" />
+
+        <FrameLayout
+            android:layout_marginEnd="50dp"
+            android:layout_gravity="end|center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/ic_boarder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:textSize="16sp"
+                android:id="@+id/content"
+                tools:text="四时节气"
+                android:textColor="#0E7569"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="1" />
+
+        </FrameLayout>
+
+</FrameLayout>

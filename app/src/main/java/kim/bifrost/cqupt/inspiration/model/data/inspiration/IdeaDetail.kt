@@ -1,13 +1,13 @@
-package kim.bifrost.cqupt.inspiration.model.data.color
+package kim.bifrost.cqupt.inspiration.model.data.inspiration
 
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
 import java.io.Serializable
 
-data class ColorDetail(
+data class IdeaDetail(
     val colors: Colors,
+    val image: String,
     val intro: String,
-    val shades: Shades
+    val shades: Shades,
+    val title: String
 ) : Serializable {
     data class Colors(
         val color_1: Color,
@@ -38,10 +38,9 @@ data class ColorDetail(
         data class Shade(
             val shade: List<Shade>
         ) : Serializable {
-            @Parcelize
             data class Shade(
                 val color: Color
-            ) : Serializable, Parcelable {
+            ) : Serializable {
                 data class Color(
                     val b: Int,
                     val c: Int,

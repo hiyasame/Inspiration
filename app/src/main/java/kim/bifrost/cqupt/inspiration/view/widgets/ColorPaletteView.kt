@@ -29,31 +29,27 @@ class ColorPaletteView @JvmOverloads constructor(
         }
     }
 
+    private var change: Boolean = false
     private var colors: IntArray = intArrayOf(
         0xFFFFFFFF.toInt(),
         0xFF000000.toInt()
     )
 
     // 设置渐变器参数
-    private var linearGradient =
-        LinearGradient(
-            width / 2F,
-            0F,
-            width / 2F,
-            height.toFloat(),
-            colors,
-            null,
-            Shader.TileMode.CLAMP
-        )
+    private var linearGradient: LinearGradient? = null
 
     override fun onDraw(canvas: Canvas) {
+        if (linearGradient == null || change) {
+            linearGradient = buildGradient()
+            change = false
+        }
         mPaint.shader = linearGradient
         canvas.drawCircle(width / 2F, height / 2F, width / 2F - 20, mPaint)
     }
 
     fun setColors(colors: IntArray) {
         this.colors = colors
-        linearGradient = buildGradient()
+        change = true
         invalidate()
     }
 
