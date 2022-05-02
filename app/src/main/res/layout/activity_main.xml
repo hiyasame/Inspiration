@@ -103,8 +103,8 @@
             android:layout_height="110dp">
 
             <ImageView
-                android:src="@drawable/ic_icon_game"
-                android:id="@+id/iv_game"
+                android:src="@drawable/ic_baseline_person_outline_24"
+                android:id="@+id/iv_login"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 tools:ignore="ContentDescription" />
@@ -113,7 +113,7 @@
                 android:textColor="@color/white"
                 android:layout_gravity="bottom|center"
                 android:textSize="16sp"
-                android:text="@string/game"
+                android:text="@string/login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </FrameLayout>

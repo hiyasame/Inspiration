@@ -20,6 +20,7 @@ object RetrofitHelper {
     val colorService: ColorService by lazy { retrofit.create() }
     val inspirationService: InspirationService by lazy { retrofit.create() }
     val collectionService: CollectionService by lazy { retrofit.create() }
+    val userService: UserService by lazy { retrofit.create() }
 
     private fun initRetrofit(): Retrofit {
         return Retrofit.Builder()

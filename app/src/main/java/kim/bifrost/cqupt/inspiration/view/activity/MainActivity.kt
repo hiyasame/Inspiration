@@ -18,6 +18,9 @@ class MainActivity : BaseBindActivity<ActivityMainBinding>() {
             ivCollection.setOnClickListener {
                 startActivity(CollectionActivity::class.java)
             }
+            ivLogin.setOnClickListener {
+                startActivity(LoginActivity::class.java)
+            }
         }
     }
 }
